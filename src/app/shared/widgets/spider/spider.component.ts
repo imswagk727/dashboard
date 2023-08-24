@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import * as Highcharts from "highcharts";
 import HC_exporting from "highcharts/modules/exporting";
+import HC_more from "highcharts/highcharts-more"; // Import the highcharts-more module
+
 
 @Component({
   selector: "app-widget-spider",
@@ -105,6 +107,7 @@ export class SpiderComponent implements OnInit {
       },
     };
     HC_exporting(Highcharts);
+    HC_more(Highcharts); 
 
     setTimeout(() => {
       window.dispatchEvent(new Event("resize"));
