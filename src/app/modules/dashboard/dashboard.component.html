@@ -2,10 +2,10 @@
 
 <!-- Table Input -->
 <form class="form-inline" action="/action_page.php">
-    <label for="email">Email:</label>
-    <input type="email" id="email" placeholder="Enter email" name="email">
-    <label for="pwd">Password:</label>
-    <input type="password" id="pwd" placeholder="Enter password" name="pswd">
+    <label for="pcr_content">PCR Content:</label>
+    <input type="number" id="pcr_content" placeholder="Enter PCR Content" name="pcr_content">
+    <label for="pcr_mvr">PCR MVR:</label>
+    <input type="number" id="pcr_mvr" placeholder="Enter PCR MVR" name="pcr_mvr">
     <label>
         <input type="checkbox" name="preview"> Preview
     </label>
@@ -18,35 +18,56 @@
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        <!-- tensile_modulus Column -->
+        <ng-container matColumnDef="tensile_modulus">
+            <th mat-header-cell *matHeaderCellDef> Tensile modulus </th>
+            <td mat-cell *matCellDef="let element"> {{element.tensile_modulus}} </td>
         </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <!-- Tesnile strees@yeild Column -->
+        <ng-container matColumnDef="yeild">
+            <th mat-header-cell *matHeaderCellDef> Tesnile strees@yeild </th>
+            <td mat-cell *matCellDef="let element"> {{element.yeild}} </td>
         </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-            <th mat-header-cell *matHeaderCellDef> Weight </th>
-            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+        <!-- Tensile stress@break Column -->
+        <ng-container matColumnDef="break">
+            <th mat-header-cell *matHeaderCellDef> Tensile stress@break </th>
+            <td mat-cell *matCellDef="let element"> {{element.break}} </td>
         </ng-container>
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef> Symbol </th>
-            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+        <!-- Izod@260C/23C ave Column -->
+        <ng-container matColumnDef="ave1">
+            <th mat-header-cell *matHeaderCellDef> Izod@260C/23C ave </th>
+            <td mat-cell *matCellDef="let element"> {{element.ave1}} </td>
         </ng-container>
 
-         <!-- Symbol Column -->
-         <ng-container matColumnDef="addr">
-            <th mat-header-cell *matHeaderCellDef> addr </th>
-            <td mat-cell *matCellDef="let element"> {{element.addr}} </td>
+         <!-- Izod@260C/-30C ave Column -->
+         <ng-container matColumnDef="ave2">
+            <th mat-header-cell *matHeaderCellDef> Izod@260C/-30C ave </th>
+            <td mat-cell *matCellDef="let element"> {{element.ave2}} </td>
         </ng-container>
+
+        <!--Vicat Column -->
+        <ng-container matColumnDef="vicat">
+            <th mat-header-cell *matHeaderCellDef> Vicat </th>
+            <td mat-cell *matCellDef="let element"> {{element.vicat}} </td>
+        </ng-container>
+
+        <!--MVR@260C Column -->
+        <ng-container matColumnDef="mvr260c">
+            <th mat-header-cell *matHeaderCellDef> MVR@260C </th>
+            <td mat-cell *matCellDef="let element"> {{element.mvr260c}} </td>
+        </ng-container>
+
+        <!-- iMVR@260C Column -->
+        <ng-container matColumnDef="imvr260c">
+            <th mat-header-cell *matHeaderCellDef> iMVR@260C </th>
+            <td mat-cell *matCellDef="let element"> {{element.imvr260c}} </td>
+        </ng-container> 
+
+
+        
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

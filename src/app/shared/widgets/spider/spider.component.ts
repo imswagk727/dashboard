@@ -28,7 +28,7 @@ export class SpiderComponent implements OnInit {
       },
 
       title: {
-        text: "Budget vs spending",
+        text: "PCR vs Virgin",
         x: -80,
       },
 
@@ -38,12 +38,14 @@ export class SpiderComponent implements OnInit {
 
       xAxis: {
         categories: [
-          "Sales",
-          "Marketing",
-          "Development",
-          "Customer Support",
-          "Information Technology",
-          "Administration",
+          "Tensile modulus *100",
+          "Tesnile strees@yeild",
+          "Tensile stress@break",
+          "Izod@260C/23C ave",
+          "Izod@260C/-30C ave.",
+          "Vicat",
+          "MVR@260C",
+          "iMVR@260C"
         ],
         tickmarkPlacement: "on",
         lineWidth: 0,
@@ -69,13 +71,13 @@ export class SpiderComponent implements OnInit {
 
       series: [
         {
-          name: "Allocated Budget",
-          data: [43000, 19000, 60000, 35000, 17000, 10000],
+          name: "PCR",
+          data: [22, 54.3, 46.5, 53, 40, 133,12.4,15.1],
           pointPlacement: "on",
         },
         {
-          name: "Actual Spending",
-          data: [50000, 39000, 42000, 31000, 26000, 14000],
+          name: "Virgin",
+          data: [22.1, 53.4, 48.8, 54, 41, 134,13.8,15.2],
           pointPlacement: "on",
         },
       ],
