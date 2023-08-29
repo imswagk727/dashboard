@@ -45,12 +45,25 @@ export class DashboardComponent implements OnInit {
 
   constructor(private dashboardService: DashboardService) { }
 
+  columnsToShow: { [key: string]: boolean } = {};
+
   ngOnInit() {
     this.bigChart = this.dashboardService.bigChart();
     this.cards = this.dashboardService.cards();
     this.pieChart = this.dashboardService.pieChart();
 
+    this.displayedColumns.forEach((column) => {
+      this.columnsToShow[column] = true;
+    });
+
     this.dataSource.paginator = this.paginator;
+  }
+  
+  toggleColumn(columnName: string): void {
+    this.columnsToShow[columnName] = !this.columnsToShow[columnName];
+    this.displayedColumns = Object.keys(this.columnsToShow).filter(
+      (column) => this.columnsToShow[column]
+    );
   }
 
 }
