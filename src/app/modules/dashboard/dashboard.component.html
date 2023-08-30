@@ -12,6 +12,9 @@
   <button type="submit">Submit</button>
 </form>
 
+
+<br>
+<p>All Predicted Properties</p>
 <br>
 <!-- Table Checkbox -->
 <div fxLayout.xs="column" fxLayout="row" fxLayoutGap="10px">
@@ -40,9 +43,9 @@
     imvr260c
   </mat-checkbox>
 </div>
+<br>
 
 <!-- Table  Content-->
-<p>All Predicted Properties</p>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
 
@@ -107,13 +110,19 @@
 <mat-divider></mat-divider>
 <br>
 
-<!-- Spider  Content-->
+
+
 <p>Compare with TDS</p>
-<div>
-  <app-widget-spider></app-widget-spider>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+  <div fxFlex="50">
+  <p>another chart to be placed here.....</p>
+  </div>
+
+  <div fxFlex="50">
+    <app-widget-spider></app-widget-spider>
+  </div>
 </div>
 
-<br>
 
 <!-- <mat-divider></mat-divider>
 
